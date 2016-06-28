@@ -61,15 +61,18 @@ android {
     lintOptions {
         abortOnError true
         htmlReport true
+        xmlReport true
         lintConfig file("${project.rootDir}/config/quality/lint/lint.xml")
         htmlOutput file("$project.buildDir/reports/lint/lint.html")
+        htmlOutput file("$project.buildDir/reports/lint/lint.xml")
     }
 }
 
 tasks.withType(Checkstyle) {
   reports {
     xml.enabled true
-    html.enabled false
+    html.enabled true
     xml.destination rootProject.file("$project.buildDir/reports/checkstyle/checkstyle-result.xml")
+    html.destination rootProject.file("$project.buildDir/reports/checkstyle/checkstyle-result.html")
   }
 }
