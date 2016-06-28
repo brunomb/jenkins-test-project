@@ -65,3 +65,11 @@ android {
         htmlOutput file("$project.buildDir/reports/lint/lint.html")
     }
 }
+
+tasks.withType(Checkstyle) {
+  reports {
+    xml.enabled true
+    html.enabled false
+    xml.destination rootProject.file("$project.buildDir/reports/checkstyle/checkstyle-result.xml")
+  }
+}
