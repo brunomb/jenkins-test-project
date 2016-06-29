@@ -29,12 +29,12 @@ task findbugs(type: FindBugs) {
         xml.enabled = true
         html.enabled = false
         xml {
-        	destination "$project.buildDir/reports/findbugs/findbugs.xml"
-		xml.withMessages true
-	}
+            destination "$project.buildDir/reports/findbugs/findbugs.xml"
+            xml.withMessages true
+        }
         html {
-		destination "$project.buildDir/reports/findbugs/findbugs.html"
-	}
+            destination "$project.buildDir/reports/findbugs/findbugs.html"
+        }
     }
 }
 
@@ -49,11 +49,11 @@ task pmd(type: Pmd) {
         xml.enabled = true
         html.enabled = true
         xml {
-		destination "$project.buildDir/reports/pmd/pmd.xml"
-	}
+            destination "$project.buildDir/reports/pmd/pmd.xml"
+        }
         html {
-		destination "$project.buildDir/reports/pmd/pmd.html"
-	}
+            destination "$project.buildDir/reports/pmd/pmd.html"
+        }
     }
 }
 
@@ -69,10 +69,10 @@ android {
 }
 
 tasks.withType(Checkstyle) {
-  reports {
-    xml.enabled true
-    html.enabled true
-    xml.destination rootProject.file("$project.buildDir/reports/checkstyle/checkstyle-result.xml")
-    html.destination rootProject.file("$project.buildDir/reports/checkstyle/checkstyle-result.html")
-  }
+    reports {
+        xml.enabled true
+        html.enabled true
+        xml.destination rootProject.file("$project.buildDir/reports/checkstyle/checkstyle-result.xml")
+        html.destination rootProject.file("$project.buildDir/reports/checkstyle/checkstyle-result.html")
+    }
 }
